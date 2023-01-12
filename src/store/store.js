@@ -1,4 +1,7 @@
 import { createStore } from "vuex";
+import getters  from "./getters";
+import mutations from "@/store/mutations";
+import actions from "@/store/actions";
 
 export const store = createStore({
     state() {
@@ -11,17 +14,15 @@ export const store = createStore({
             }]
         }
     },
-    mutations: {
-        toggleLikePost(state) {
-            state.postLiked = !state.postLiked;
-        }
-    },
-    getters: {
-        isLiked(state) {
-             return state.postLiked;
-        },
-        getComments(state) {
-            return state.comments;
-        }
-    }
+    actions: actions,
+    mutations: mutations,
+    getters: getters,
+    // getters: {
+    //     isLiked(state) {
+    //          return state.postLiked;
+    //     },
+    //     getComments(state) {
+    //         return state.comments;
+    //     }
+    // }
 });

@@ -76,18 +76,12 @@ export default {
 
     }
   },
-  // watch: {
-  //   likedButtonFlag() {
-  //     this.likedButtonFlag = this.$store.state.postLiked;
-  //     console.log(this.likedButtonFlag)
-  //   }
-  // },
   methods: {
     POST_IMG_KEY() {
       return POST_IMG_KEY
     },
     handleLikeBtn() {
-      this.$store.commit('toggleLikePost');
+      this.$store.dispatch('toggleLikeButton');
     }
   },
   computed: {
